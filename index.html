@@ -9,17 +9,32 @@
     <aside>
       <section>👴</section>
       <section>Human</section>
-      <section class="win-section">Win: <span>0</span></section>
+      <section class="win-section">Wins: <span>0</span></section>
     </aside>
     <main>
       <h1>Rock, Paper, Scissors!</h1>
       <section class="menu-battle-section">
-        <section class="game-selection-section">
+        <section class="main-section" id="game-selection-section">
           <h2>Choose Your Game!</h2>
-          <section>
+          <div>
             <button class="game-selection-button">Classic Game...</button>
             <button class="game-selection-button">Advanced Game...</button>
-          </section>
+          </div>
+        </section>
+        <section class="main-section hidden" id="battle-section">
+          <h3>Choose Your Fighter!</h3>
+          <div>
+            <ul>Rock</ul>
+            <ul>Paper</ul>
+            <ul>Scissors</ul>
+          </div>
+        </section>
+        <section class="main-section hidden" id="result-section">
+          <h4><span></span>Won this round!</h4>
+          <div>
+            <ul>Human Selection</ul>
+            <ul>Computer Selection</ul>
+          </div>
         </section>
       </section>
     </main>
