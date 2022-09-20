@@ -15,10 +15,21 @@ body {
 aside {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 15%;
   max-height: 100%;
   background-color: #566573;
   padding-top: 50px;
+}
+
+.emoji {
+  height: 75px;
+  width: 75px;
+  font-size: 55px;
+}
+
+.win-section {
+  font-size: 25px;
 }
 
 main {
@@ -31,10 +42,6 @@ main {
 
 h1 {
   font-size: 60px;
-}
-
-.win-section {
-  font-size: 25px;
 }
 
 .menu-battle-section {
