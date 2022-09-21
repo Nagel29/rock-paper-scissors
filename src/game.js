@@ -20,17 +20,17 @@ class Game {
         scissors: 'Draw!',
       }
     }
-    executeGame() {
-      var result = this.classicGameResults[this.human.fighter][this.computer.fighter];
-      if (result === 'Human Wins!') {
-        this.human.wins++;
-      }
-      if (result === 'Computer Wins!') {
-        this.computer.wins++;
-      }
-      resetGame();
-      return result;
+  }
+  executeClassicGame() {
+    var result = this.classicGameResults[this.human.fighter][this.computer.fighter];
+    if (result === 'Human Wins!') {
+      this.human.wins++;
     }
+    if (result === 'Computer Wins!') {
+      this.computer.wins++;
+    }
+    resetGame();
+    return result;
   }
 }
 
