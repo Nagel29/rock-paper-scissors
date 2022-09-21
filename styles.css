@@ -70,13 +70,32 @@ h2 {
   align-items: center;
 }
 
+#button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .game-selection-button {
-  height: 100px;
-  width: 175px;
+  background-color: #D5D8DC;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 125px;
+  width: 250px;
   color: #283747;
   margin: 25px;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 18px;
+}
+
+.images-on-buttons-container {
+  pointer-events: none;
+}
+.button-images {
+  height: 40px;
+  width: 40px;
 }
 
 h3 {
