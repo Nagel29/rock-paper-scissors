@@ -1,3 +1,12 @@
+var human = new Player('Human', '👴');
+var computer = new Player('Computer', '🤖');
+var classicGameFighters = ['rock', 'paper', 'scissors'];
+var rock = './images/happy-rocks.png';
+var paper = './images/happy-paper.png';
+var scissors = './images/happy-scissors.png';
+var currentGame = '';
+var winnerHolder = '';
+
 var humanWinsDisplay = document.querySelector('#human-wins');
 var computerWinsDisplay = document.querySelector('#computer-wins');
 var gameSelectionSection = document.querySelector('#game-selection-section');
@@ -11,20 +20,12 @@ var scissorsButton = document.querySelector('#scissors-button');
 var resultSection = document.querySelector('#result-section');
 var resultDisplay = document.querySelector('#result-display');
 var winner = document.querySelector('#winner');
-var human = new Player('Human', '👴');
-var computer = new Player('Computer', '🤖');
-var classicGameFighters = ['rock', 'paper', 'scissors'];
-var rock = './images/happy-rocks.png';
-var paper = './images/happy-paper.png';
-var scissors = './images/happy-scissors.png';
-var currentGame = '';
-var winnerHolder = '';
-//this will need to later go into an event listener/handler. This will be for classic game. Will need another for advanced.
 
 
 
 buttonContainer.addEventListener('click', startGame);
 battleSection.addEventListener('click', selectFighter);
+
 
 function startGame(event) {
   if (event.target === classicGameButton) {
@@ -34,6 +35,11 @@ function startGame(event) {
     battleSection.classList.remove('hidden');
     //make this in a separate render function?
   }
+}
+function resetGame() {
+  gameSelectionSection.classList.add('hidden');
+  battleSection.classList.remove('hidden');
+  resultSection.classList.add('hidden');
 }
 
 function selectFighter(event) {
@@ -54,4 +60,5 @@ function renderResults() {
   computerWinsDisplay.innerText = computer.wins;
   battleSection.classList.add('hidden');
   resultSection.classList.remove('hidden');
+  setTimeout(resetGame, 2200)
 }
