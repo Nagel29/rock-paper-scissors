@@ -82,7 +82,7 @@ h2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 125px;
+  height: 115px;
   width: 250px;
   color: #283747;
   margin: 25px;
@@ -90,9 +90,35 @@ h2 {
   font-size: 18px;
 }
 
+.game-selection-button[data-descr1] {
+  position: relative;
+  /* text-decoration: underline;
+  color: #00f; */
+  /* cursor: help; */
+}
+
+.game-selection-button[data-descr1]:hover::after,
+.game-selection-button[data-descr1]:focus::after {
+  content: attr(data-descr1) "\A" attr(data-descr2) "\A" attr(data-descr3) "\A" attr(data-descr4) "\A" attr(data-descr5);
+  white-space: pre-wrap;
+  position: absolute;
+  align-self: center;
+  top: 135px;
+  height: 92px;
+  width: 230px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #D5D8DC;
+  opacity: 75%;
+  padding: 10px;
+  font-size: 14px;
+  z-index: 1;
+}
+
 .images-on-buttons-container {
   pointer-events: none;
 }
+
 .button-images {
   height: 40px;
   width: 40px;
