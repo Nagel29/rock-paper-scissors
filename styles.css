@@ -32,6 +32,15 @@ aside {
   font-size: 25px;
 }
 
+.change-game-button {
+  height: 65px;
+  width: 175px;
+  color: #283747;
+  margin-top: 100px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
 main {
   width: 70%;
   max-height: 100%;
