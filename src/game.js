@@ -6,31 +6,33 @@ class Game {
     this.classicGameResults = {
       rock: {
         rock: 'Draw!',
-        paper: 'Computer Wins!',
-        scissors: 'Human Wins!',
+        paper: 'Computer won this round!',
+        scissors: 'Human won this round!',
       },
       paper: {
-        rock: 'Human Wins!',
+        rock: 'Human won this round!',
         paper: 'Draw!',
-        scissors: 'Computer Wins!',
+        scissors: 'Computer won this round!',
       },
       scissors: {
-        rock: 'Computer Wins!',
-        paper: 'Human Wins!',
+        rock: 'Computer won this round!',
+        paper: 'Human won this round!',
         scissors: 'Draw!',
       }
     }
   }
   executeClassicGame() {
-    var result = this.classicGameResults[this.human.fighter][this.computer.fighter];
-    if (result === 'Human Wins!') {
+    var winner = this.classicGameResults[this.human.fighter][this.computer.fighter];
+    winnerHolder = winner;
+    if (winner === 'Human won this round!') {
       this.human.wins++;
     }
-    if (result === 'Computer Wins!') {
+    if (winner === 'Computer won this round!') {
       this.computer.wins++;
     }
-    resetGame();
-    return result;
+    renderResults();
+    // resetGame();
+    // return winner;
   }
 }
 
