@@ -18,7 +18,7 @@ var rock = './images/happy-rocks.png';
 var paper = './images/happy-paper.png';
 var scissors = './images/happy-scissors.png';
 var currentGame = '';
-var winnerHolder
+var winnerHolder = '';
 //this will need to later go into an event listener/handler. This will be for classic game. Will need another for advanced.
 
 
