@@ -50,6 +50,8 @@ function computerTakeTurn() {
 function renderResults() {
   winner.innerText = winnerHolder;
   resultDisplay.innerHTML = `<img src="${eval(human.fighter)}" height="250px" width="250px"><img src="${eval(computer.fighter)}" height="250px" width="250px">`;
+  humanWinsDisplay.innerText = human.wins;
+  computerWinsDisplay.innerText = computer.wins;
   battleSection.classList.add('hidden');
   resultSection.classList.remove('hidden');
 }
