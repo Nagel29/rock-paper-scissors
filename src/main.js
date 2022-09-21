@@ -6,6 +6,7 @@ var paper = './images/happy-paper.png';
 var scissors = './images/happy-scissors.png';
 var currentGame = '';
 var winnerHolder = '';
+var timeout = '';
 
 var humanWinsDisplay = document.querySelector('#human-wins');
 var changeGameButton = document.querySelector('#change-game-button');
@@ -28,8 +29,10 @@ buttonContainer.addEventListener('click', startGame);
 battleSection.addEventListener('click', selectFighter);
 
 function changeGame() {
+  clearTimeout(timeout);
   resetWins();
   displayWins(human.wins, computer.wins);
+  changeGameButton.classList.add('hidden');
   battleSection.classList.add('hidden');
   gameSelectionSection.classList.remove('hidden');
   resultSection.classList.add('hidden');
@@ -78,5 +81,5 @@ function renderResults() {
   battleSection.classList.add('hidden');
   resultSection.classList.remove('hidden');
   displayWins(human.wins, computer.wins);
-  setTimeout(resetGame, 2200);
+  timeout = setTimeout(resetGame, 2200);
 }
