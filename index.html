@@ -9,7 +9,7 @@
     <aside>
       <article class="emoji">👴</article>
       <article>Human</article>
-      <article class="win-section">Wins: <span>0</span></article>
+      <article class="win-section">Wins: <span id="human-wins">0</span></article>
     </aside>
     <main>
       <h1>Rock, Paper, Scissors!</h1>
@@ -17,16 +17,16 @@
         <section class="main-section" id="game-selection-section">
           <h2>Choose Your Game!</h2>
           <div>
-            <button class="game-selection-button">Classic Game...</button>
-            <button class="game-selection-button">Advanced Game...</button>
+            <button class="game-selection-button" id="classic-game-button">Classic Game...</button>
+            <button class="game-selection-button" id="advanced-game-button">Advanced Game...</button>
           </div>
         </section>
         <section class="main-section hidden" id="battle-section">
           <h3>Choose Your Fighter!</h3>
           <div>
-            <ul>Rock</ul>
-            <ul>Paper</ul>
-            <ul>Scissors</ul>
+            <button id="rock-button">Rock</button>
+            <button id="paper-button">Paper</button>
+            <button id="scissors-button">Scissors</button>
           </div>
         </section>
         <section class="main-section hidden" id="result-section">
@@ -41,7 +41,7 @@
     <aside>
       <article class="emoji">🤖</article>
       <article>Human</article>
-      <article class="win-section">Wins: <span>0</span></article>
+      <article class="win-section">Wins: <span id="computer-wins">0</span></article>
     </aside>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="player.js"></script>
