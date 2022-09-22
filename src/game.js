@@ -56,7 +56,8 @@ class Game {
         lizard: 'Computer won this round!',
         alien: 'Draw',
       }
-  }
+    }
+}
   executeClassicGame() {
     var winner = this.classicGameResults[this.human.fighter][this.computer.fighter];
     winnerHolder = winner;
@@ -67,8 +68,17 @@ class Game {
       this.computer.wins++;
     }
     renderResults();
-    // resetGame();
-    // return winner;
+  }
+  executeAdvancedGame() {
+    var winner = this.advancedGameResults[this.human.fighter][this.computer.fighter];
+    winnerHolder = winner;
+    if (winner === 'Human won this round!') {
+      this.human.wins++;
+    }
+    if (winner === 'Computer won this round!') {
+      this.computer.wins++;
+    }
+    renderResults();
   }
 }
 
