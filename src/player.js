@@ -10,5 +10,3 @@ class Player {
     computerTakeTurn();
   }
 }
-
-//will need event listener for the fighters. Will trigger the takeTurn event handler.
