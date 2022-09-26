@@ -33,16 +33,26 @@ var winner = document.querySelector('#winner');
 changeGameButton.addEventListener('click', changeGame)
 buttonContainer.addEventListener('click', startGame);
 battleSection.addEventListener('click', selectFighter);
+window.addEventListener('beforeunload', saveWins);
+window.addEventListener('load', displaySavedWins);
 
 //Functions
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
+
 function changeGame() {
   clearTimeout(timeout);
   resetWins();
   displayWins(human.wins, computer.wins);
-  changeGameButton.classList.add('hidden');
-  battleSection.classList.add('hidden');
-  gameSelectionSection.classList.remove('hidden');
-  resultSection.classList.add('hidden');
+  hide(changeGameButton);
+  hide(battleSection);
+  hide(resultSection);
+  show(gameSelectionSection);
 }
 
 function resetWins() {
@@ -53,14 +63,6 @@ function resetWins() {
 function displayWins(humanWins, computerWins) {
   humanWinsDisplay.innerText = humanWins;
   computerWinsDisplay.innerText = computerWins;
-}
-
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
 }
 
 function startGame(event) {
@@ -112,4 +114,15 @@ function renderResults() {
   show(resultSection);
   displayWins(human.wins, computer.wins);
   timeout = setTimeout(resetGame, 2200);
+}
+
+function saveWins() {
+  localStorage.setItem('saved-human-wins', human.wins)
+  localStorage.setItem('saved-computer-wins', computer.wins)
+}
+
+function displaySavedWins() {
+  human.wins = localStorage.getItem('saved-human-wins');
+  computer.wins = localStorage.getItem('saved-computer-wins');
+  displayWins(human.wins, computer.wins);
 }
