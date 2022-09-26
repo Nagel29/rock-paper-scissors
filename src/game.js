@@ -81,7 +81,3 @@ class Game {
     renderResults();
   }
 }
-
-//clicking the type of game will kick off the game. Which means it should create a new instance of Game.
-// will put an event listener on the button section. Based on which button is clicked, it will pass through a game type.
-//Defaults right now to human and computer, but can change later if i'd like to.
