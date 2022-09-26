@@ -92,9 +92,6 @@ h2 {
 
 .game-selection-button[data-descr1] {
   position: relative;
-  /* text-decoration: underline;
-  color: #00f; */
-  /* cursor: help; */
 }
 
 .game-selection-button[data-descr1]:hover::after,

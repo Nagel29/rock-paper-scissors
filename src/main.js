@@ -1,3 +1,4 @@
+//Global Variables
 var human = new Player('Human', '👴');
 var computer = new Player('Computer', '🤖');
 var classicGameFighters = ['rock', 'paper', 'scissors'];
@@ -28,10 +29,12 @@ var resultSection = document.querySelector('#result-section');
 var resultDisplay = document.querySelector('#result-display');
 var winner = document.querySelector('#winner');
 
+//Event Listeners
 changeGameButton.addEventListener('click', changeGame)
 buttonContainer.addEventListener('click', startGame);
 battleSection.addEventListener('click', selectFighter);
 
+//Functions
 function changeGame() {
   clearTimeout(timeout);
   resetWins();
@@ -52,33 +55,39 @@ function displayWins(humanWins, computerWins) {
   computerWinsDisplay.innerText = computerWins;
 }
 
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
+
 function startGame(event) {
   if (event.target === classicGameButton) {
     var game = new Game(human, computer, 'Classic Game');
     currentGame = game;
-    gameSelectionSection.classList.add('hidden');
-    battleSection.classList.remove('hidden');
-    advancedBattle.classList.add('hidden');
-    classicBattle.classList.remove('hidden');
-    changeGameButton.classList.remove('hidden');
-    //make this in a separate render function?
+    hide(gameSelectionSection);
+    hide(advancedBattle);
+    show(battleSection);
+    show(classicBattle);
+    show(changeGameButton);
   }
   if (event.target === advancedGameButton) {
     var game = new Game(human, computer, 'Advanced Game');
     currentGame = game;
-    gameSelectionSection.classList.add('hidden');
-    battleSection.classList.remove('hidden');
-    classicBattle.classList.add('hidden');
-    advancedBattle.classList.remove('hidden');
-    changeGameButton.classList.remove('hidden');
-      //make this in a separate render function?
+    hide(gameSelectionSection);
+    hide(classicBattle);
+    show(battleSection);
+    show(advancedBattle);
+    show(changeGameButton);
   }
 }
 
 function resetGame() {
-  gameSelectionSection.classList.add('hidden');
-  battleSection.classList.remove('hidden');
-  resultSection.classList.add('hidden');
+  hide(gameSelectionSection);
+  hide(resultSection);
+  show(battleSection);
 }
 
 function selectFighter(event) {
@@ -99,8 +108,8 @@ function computerTakeTurn() {
 function renderResults() {
   winner.innerText = winnerHolder;
   resultDisplay.innerHTML = `<img src="${eval(human.fighter)}" height="250px" width="250px"><img src="${eval(computer.fighter)}" height="250px" width="250px">`;
-  battleSection.classList.add('hidden');
-  resultSection.classList.remove('hidden');
+  hide(battleSection);
+  show(resultSection);
   displayWins(human.wins, computer.wins);
   timeout = setTimeout(resetGame, 2200);
 }
